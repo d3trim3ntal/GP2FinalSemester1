@@ -1,38 +1,60 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class WheelController : MonoBehaviour
 {
-    public WheelCollider[] wheels = new WheelCollider[4];
-    public float torque = 200;
     // Start is called before the first frame update
     void Start()
     {
-        
+        carRb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        GetInputs();
     }
 
-    private void FixedUpdate()
+    public enum Axel
     {
-        if(Input.GetKey(KeyCode.W))
+        Front,
+        Rear
+    }
+
+    [Serializable]
+    public struct Wheel
+    {
+        public GameObject wheelModel;
+        public WheelCollider wheelCollider;
+        public Axel axel;
+    }
+
+    public float maxAcceleration = 30.0f;
+    public float brakeAcceleration = 50.0f;
+
+    public List<Wheel> wheels;
+
+    float moveInput;
+
+    private Rigidbody carRb;
+
+    void LateUpdate()
+    {
+        Move();
+    }
+
+    void GetInputs()
+    {
+        moveInput = Input.GetAxis("Vertical");
+    }
+
+    void Move()
+    {
+        foreach (var wheel in wheels)
         {
-            for (int i = 0; i < wheels.Length; i++)
-            {
-                wheels[i].motorTorque = torque;
-            }
-        }
-        else
-        {
-            for (int i = 0; i < wheels.Length; i++)
-            {
-                wheels[i].motorTorque = 0;
-            }
+            wheel.wheelCollider.motorTorque = moveInput * maxAcceleration * Time.deltaTime;
         }
     }
 
