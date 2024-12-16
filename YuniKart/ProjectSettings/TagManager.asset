@@ -28,6 +28,7 @@ TagManager:
   - GreekRadius
   - RomanRadius
   - LookRotation
+  - Environment
   layers:
   - Default
   - TransparentFX
@@ -45,7 +46,7 @@ TagManager:
   - Ground
   - Tower
   - LookRotation
-  - 
+  - Environment
   - 
   - 
   - 

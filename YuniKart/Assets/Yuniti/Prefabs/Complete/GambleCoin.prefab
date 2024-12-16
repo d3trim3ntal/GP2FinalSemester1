@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -6344425047837617112}
   - component: {fileID: -1140460725452327646}
   - component: {fileID: 4497644470898728765}
+  - component: {fileID: 8705269634392319362}
   m_Layer: 0
   m_Name: GambleCoin
   m_TagString: Untagged
@@ -32,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.2191849, y: 6.04, z: 3.6975589}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 860453226644853993}
@@ -151,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 20
-  targetObject: {fileID: 3225650241671013452, guid: b2977663fe5c62f498f6c17836312e62, type: 3}
+  targetObject: {fileID: 0}
   moveSpeed: 0
 --- !u!135 &-1140460725452327646
 SphereCollider:
@@ -270,6 +271,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8705269634392319362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3083323839593401277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9277510f29f394a49bc339b217cf05fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeedX: 0
+  rotationSpeedY: 3
+  rotationSpeedZ: 0
 --- !u!1001 &2771489910545161627
 PrefabInstance:
   m_ObjectHideFlags: 0
